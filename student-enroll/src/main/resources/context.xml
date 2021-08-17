@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+	<context:component-scan base-package="com.xworkz.student_enroll"></context:component-scan>
+	<context:property-placeholder location="/WEB-INF/classes/db.properties"/>
+
+	<bean id="int" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	<property name="prefix">
+	<value>/</value>
+	</property>
+	<property name="suffix">
+	<value>.jsp</value>
+	</property>
+	</bean>
+	
+	<bean id="factory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
+		<property name="dataSource" ref ="driverManagerDataSource"></property>
+		<property name="annotatedClasses">
+		<list>
+				<value>com.xworkz.student_enroll.entity.StudentEnrollEntity</value>
+		</list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.id.new_generator_mappings">${hibernate.prop.generator}</prop>
+				<prop key="hibernate.hbm2ddl.auto">${hibernate.hbm2ddl.auto}</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource" id="driverManagerDataSource">
+		<property name="driverClassName" value="${driverManagerDataSource.driverClassName}"></property>
+		<property name="url" value="${driverManagerDataSource.url}"></property>
+		<property name="username" value="${driverManagerDataSource.username}"></property>
+		<property name="password" value="${driverManagerDataSource.password}"></property>
+	</bean>
+	
+	<bean
+	class="org.springframework.mail.javamail.JavaMailSenderImpl" id ="javaMailSenderImpl">
+	<property name="username" value="supriya.xworkz@gmail.com"></property>
+	<property name="password" value="7795314634"></property>
+	<property name="host" value="smtp.gmail.com"></property>
+	<property name="port" value="587"></property>
+	<property name="javaMailProperties">
+		<props>
+			<prop key="mail.debug">true</prop>
+			<prop key="mail.smtp.auth">true</prop>
+			<prop key="mail.smtp.ssl.trust">smtp.gmail.com</prop>
+			<prop key="mail.smtp.starttls.enable">true</prop>
+		</props>
+	
+	
+	</property>
+	
+	</bean>
+
+
+
+</beans>
