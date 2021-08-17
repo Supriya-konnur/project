@@ -7,7 +7,7 @@
 	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 
-	<context:component-scan base-package="com.xworkz.student_enroll"></context:component-scan>
+	<context:component-scan base-package="com.xworkz.vaccinationapp"></context:component-scan>
 	<context:property-placeholder location="/WEB-INF/classes/db.properties"/>
 
 	<bean id="int" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
@@ -23,7 +23,7 @@
 		<property name="dataSource" ref ="driverManagerDataSource"></property>
 		<property name="annotatedClasses">
 		<list>
-				<value>com.xworkz.student_enroll.entity.StudentEnrollEntity</value>
+				<value>com.xworkz.vaccinationapp.entity.VaccinationEntity</value>
 		</list>
 		</property>
 		<property name="hibernateProperties">
