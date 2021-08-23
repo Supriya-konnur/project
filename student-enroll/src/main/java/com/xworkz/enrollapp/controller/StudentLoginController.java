@@ -17,6 +17,7 @@ public class StudentLoginController {
 		System.out.println(this.getClass().getSimpleName() + "created");
 	}
 	
+	
 	@Autowired
 	StudentLoginService stdLoginService;
 
