@@ -14,17 +14,18 @@ import com.xworkz.vaccinationapp.service.VaccinationRegisterService;
 public class VaccinationRegistrationController {
 
 	public VaccinationRegistrationController() {
-		System.out.println(this.getClass().getSimpleName() + "created");
+		System.out.println(this.getClass().getSimpleName() + " Object created");
 	}
 	
 	@Autowired
 	VaccinationRegisterService vaccinationRegisterService;
 	
-	@PostMapping("/login.all")
-	public ModelAndView verifyLoginDetails(@RequestParam String email, @RequestParam String password) {
-		boolean passwordDetails=vaccinationRegisterService.validateAndGetDetails(email, password);
+	@PostMapping("/success.all")
+	public ModelAndView verifyRegistrationDetails(@RequestParam String email, @RequestParam String password) {
+		System.out.println("invoked verifyRegistrationDetails()");
+		boolean passwordDetails=vaccinationRegisterService.verifyRegistrationDetails(email, password);
 			if (passwordDetails) {
-				return new ModelAndView("register", "msg", "Registration Successfull!!");
+				return new ModelAndView("RegisterationSuccess", "LoginSuccessMessage", "Registration Successfull!!");
 			} else {
 				return new ModelAndView("homePage", "homemsg", "Invalid EmailId or Password");
 

@@ -17,7 +17,9 @@ import lombok.ToString;
 @Entity
 
 @NamedQueries(value = {
-		@NamedQuery(name = "verifyEmail", query = "select entity.password from VaccinationEntity entity where entity.email=:eid ") })
+		@NamedQuery(name = "emailVerification", query = "select entity from VaccinationEntity entity where entity.email=:eId "),
+		@NamedQuery(name = "verifyEmail", query = "select entity.email from VaccinationEntity entity where entity.email=:emailID ")		
+})
 
 @Table(name="vaccination_table")
 @Getter
@@ -43,8 +45,11 @@ public class VaccinationEntity {
 	@Column(name="PHONE")
 	private String phone;
 	
-	@Column(name="TYPE")
-	private String type;
+	@Column(name = "TYPE_OF_VACCINE")
+	private String typeOfVaccine;
+	
+	@Column(name = "GENDER")
+	private String gender;
 	
 	
 }

@@ -1,6 +1,8 @@
 package com.xworkz.vaccinationapp.dao;
 
+import com.xworkz.vaccinationapp.entity.VaccinationEntity;
+
 public interface VaccinationRegistrationDAO {
 
-	public String verifyEmail(String email);
+	public VaccinationEntity emailVerification(String email);
 }

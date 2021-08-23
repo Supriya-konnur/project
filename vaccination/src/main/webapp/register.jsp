@@ -140,23 +140,42 @@ footer p {
        <!--  <h2 class="text-center">Sign In</h2>  --> 
         <div class="form-group">
         	<input type="text" class="form-control" name="name" placeholder="Name" required="required">
+        	 <small style="color: red;">${namemsg}</small>
         </div> 
         <div class="form-group">
         	<input type="text" class="form-control" name="email" placeholder="Email Id" required="required">
+        	<small
+					style="color: red;">${emailmsg}</small>
         </div>
 		 <div class="form-group">
             <input type="password" class="form-control" name="password" placeholder="Password" type="hidden">
+            <small style="color: red;">${passwordmsg}</small>
         </div> 
-       <!--  <div class="form-group">
+        <div class="form-group">
             <input type="password" class="form-control" name="confirmPassword" placeholder="ConfirmPassword" type="hidden">
-        </div>  -->
+            
+        </div>
         <div class="form-group">
         	<input type="text" class="form-control" name="phone" placeholder="phone No" required="required">
+        	<small style="color: red;">${phonemsg}</small>
         </div>
         <div class="form-group">
-        	<input type="text" class="form-control" name="type" placeholder="Type Of vaccination" required="required">
-        </div>
-        
+				<label>Gender</label> <br> <input type="radio" name="gender" value="Male">Male <br> <input
+					type="radio" name="gender" value="Female">Female 
+					<small style="color: red;">${gendermsg}</small>
+			</div>
+
+
+
+			<div class="form-group">
+				<select class="form-control" name="typeOfVaccine">
+					<option>Select vaccine type</option>
+					<option value="Covaxin">Covaxin</option>
+					<option value="Covishield">Covishield</option>
+					<option value="Sputnik V">Sputnik V</option>
+				</select> <small style="color: red;">${typemsg}</small>
+			</div>
+
              
         <div class="form-group">
             <button type="submit" class="btn btn-primary btn-lg btn-block">Register</button>

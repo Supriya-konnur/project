@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>welcome Page</title>
+<title>OTP Page</title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet"
@@ -16,7 +16,7 @@
 <style>
 body {
 	background-image:
-		url('https://media.istockphoto.com/vectors/risk-group-old-lady-getting-covid19-vaccine-shot-vector-id1293112631?k=6&m=1293112631&s=612x612&w=0&h=y4fYg0HLKEKRMByE-oeeVk-ZcZpnrl1xJLlXD8vYsn4=');
+		url('https://0fee0d1c5b52a13f8e96-30a303f53bdf01a25c7e0ba587cc52bc.ssl.cf2.rackcdn.com/istm_19d221412ae707e13249152e58b0803f.PNG');
 }
 .form-control {
 	min-height: 41px;
@@ -102,36 +102,31 @@ footer {
 	width: 100%;
 	height: 2.5rem;
 }
-footer p {
-	color: black;
-}
+
 </style>
-<script type="text/javascript" src="index.js"></script>
+
 </head>
 <body>
-	<header
-		style="color: black; font-family: Lucida Console; font-size: 2.5em; background-color: #66b3ff">Welcome Page </header>
+<header
+		style="color: black; font-family: Lucida Console; font-size: 2.5em; background-color: #66b3ff">OTP Page </header>
 
-	<%-- <h3
-		style="color: black; font-family: Lucida Console; font-size: 1.5em; background-color: #66b3ff">${ welcomemsg}</h3> --%>
+
 
 	<div class="login-form">
-		<form action="otpgenerator.all" method="post">
+		<form action="getotppage" method="post">
 
 
 
-			<h2 class="text-center">Singup for Vaccination</h2>
+			<h2 class="text-center">Sign up for vaccination</h2>
+
 
 			<div class="form-group">
-				<input type="text" id="email" class="form-control" name="email"
-					placeholder="Enter email id to register" required="required">
-					<small
-					style="color: red;">${message}</small>
+				<input type="text" class="form-control" name="otp" placeholder="OTP">
 			</div>
+			<small style="color: red;"> Please enter OTP</small> <br> <small style="color: red;">${otpmsg}</small>
 
 			<div class="form-group">
-				<button type="submit" onclick="handleSubmit()"
-					class="btn btn-primary btn-lg btn-block">SIGN UP</button>
+				<button type="submit" class="btn btn-primary btn-lg btn-block">GetOtp</button>
 			</div>
 
 		</form>
@@ -140,5 +135,6 @@ footer p {
 			<marquee>Copyright@2021</marquee>
 		</footer>
 	</div>
+
 </body>
 </html>

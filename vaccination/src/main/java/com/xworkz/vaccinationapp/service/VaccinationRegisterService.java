@@ -1,6 +1,6 @@
 package com.xworkz.vaccinationapp.service;
 
 public interface VaccinationRegisterService {
-
-	boolean validateAndGetDetails(String email, String password);
+	
+	boolean verifyRegistrationDetails(String email, String pwd);
 }

@@ -18,5 +18,7 @@ public class VaccinationDTO {
 	private String password;
 	private String confirmPassword;
 	private String phone;
-	private String type;
+	private String typeOfVaccine;
+	private String otp;
+	private String gender;
 }
